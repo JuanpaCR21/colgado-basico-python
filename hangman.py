@@ -57,9 +57,11 @@ def main_interface():
     print("1-Jugar \n2-salir \nOtras opciones en camino")
     v_op = input("Dijite la opción que desea(1/2) \n")
     if v_op == "1":
+        audio.play_sound(r'hangman\sounds\sound1.wav')
         ingame()
         main_interface()
     elif v_op == "2":
+        audio.play_sound(r'hangman\sounds\sound1.wav')
         print("Saliendo...")
         sys.exit()
     else:
