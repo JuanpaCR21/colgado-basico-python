@@ -5,7 +5,7 @@
 
 #python -m pip install colorama
 #pip install keyboard
-#pip install playsound
+
 
 #IMPORTACION DE LAS LIBRERIAS NECESARIAS
 import random,sys,os,time,keyboard,audio
@@ -31,13 +31,13 @@ def ingame():
         print("fallos:",v_fallos)
         v_letra = input("Ingrese una letra: \n")
         if v_letra in v_selectWord:
-            audio.play_sound(r'hangman\sounds\SF_Point.wav')
+            audio.play_sound(r'sounds\SF_Point.wav')
             for i in range(len(v_selectWord)):
                 if v_selectWord[i] == v_letra:
                     l_chars[i] = v_letra
         else:
             v_fallos +=1
-            audio.play_sound(r'hangman\sounds\SF_Error.wav')
+            audio.play_sound(r'sounds\SF_Error.wav')
             if v_fallos == 6:
                 os.system("cls")
                 print(Fore.RED + 'Has perdido. La palabra era:', v_selectWord)
@@ -57,11 +57,11 @@ def main_interface():
     print("1-Jugar \n2-salir \nOtras opciones en camino")
     v_op = input("Dijite la opción que desea(1/2) \n")
     if v_op == "1":
-        audio.play_sound(r'hangman\sounds\sound1.wav')
+        audio.play_sound(r'sounds\sound1.wav')
         ingame()
         main_interface()
     elif v_op == "2":
-        audio.play_sound(r'hangman\sounds\sound1.wav')
+        audio.play_sound(r'sounds\sound1.wav')
         print("Saliendo...")
         sys.exit()
     else:
@@ -81,7 +81,7 @@ def main():
         if keyboard.is_pressed('shift'):
             enter_pressed = True
         time.sleep(0.1)
-    audio.play_sound(r'hangman\sounds\sound1.wav')
+    audio.play_sound(r'sounds\sound1.wav')
     main_interface()
 
     
